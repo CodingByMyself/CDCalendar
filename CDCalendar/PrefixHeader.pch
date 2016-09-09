@@ -1,0 +1,47 @@
+
+//
+//  PrefixHeader.pch
+//  CDCalendar
+//
+//  Created by Cindy on 16/9/9.
+//  Copyright © 2016年 Mangocity. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Masonry.h"
+#import "CDDateHelper.h"
+
+
+
+/**
+ *  获得指定颜色值的实例
+ *  @param r R值
+ *  @param g G值
+ *  @param b B值
+ *  @param a 透明度
+ *  @return UIColor的一个实例
+ */
+#define DefineColorRGB(r, g, b, a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+/**
+ *  获得当前设备的高 和 宽
+ */
+#define ScreenWidth  ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
+
+#define ScreenHeight  ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
+
+
+
+#define CDCalendarDayOffset  (1+7)
+
+#define CDCalendarMonthHeight  26.0
+#define CDCalendarWeekHeight  30.0
+
+
+
+
+#endif /* PrefixHeader_pch */

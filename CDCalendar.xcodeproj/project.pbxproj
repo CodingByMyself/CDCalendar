@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37D95A4D1D82689100CD819C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A4C1D82689100CD819C /* main.m */; };
+		37D95A501D82689100CD819C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A4F1D82689100CD819C /* AppDelegate.m */; };
+		37D95A581D82689100CD819C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D95A571D82689100CD819C /* Assets.xcassets */; };
+		37D95A5B1D82689100CD819C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D95A591D82689100CD819C /* LaunchScreen.storyboard */; };
+		37D95A791D8268DB00CD819C /* CDCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A651D8268DB00CD819C /* CDCalendarManager.m */; };
+		37D95A7B1D8268DB00CD819C /* CDMonthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A6B1D8268DB00CD819C /* CDMonthModel.m */; };
+		37D95A7C1D8268DB00CD819C /* CDDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A6E1D8268DB00CD819C /* CDDateHelper.m */; };
+		37D95A7D1D8268DB00CD819C /* CDCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A711D8268DB00CD819C /* CDCalendarView.m */; };
+		37D95A7E1D8268DB00CD819C /* CDDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A741D8268DB00CD819C /* CDDayCell.m */; };
+		37D95A7F1D8268DB00CD819C /* CDMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A761D8268DB00CD819C /* CDMonthCell.m */; };
+		37D95A801D8268DB00CD819C /* CDWeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A781D8268DB00CD819C /* CDWeekCell.m */; };
+		37D95A841D82694700CD819C /* CDBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A831D82694700CD819C /* CDBaseNavigationController.m */; };
+		37D95A881D828DB400CD819C /* CDCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A871D828DB400CD819C /* CDCalendarAppearance.m */; };
+		37D95A8B1D82937100CD819C /* CDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D95A8A1D82937100CD819C /* CDMainViewController.m */; };
+		38CE48F9A1EE3FA2628CC96F /* libPods-CDCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA8A0D33DCF7176783AD9CE /* libPods-CDCalendar.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37D95A481D82689100CD819C /* CDCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D95A4C1D82689100CD819C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37D95A4E1D82689100CD819C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		37D95A4F1D82689100CD819C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37D95A571D82689100CD819C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37D95A5A1D82689100CD819C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37D95A5C1D82689100CD819C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37D95A641D8268DB00CD819C /* CDCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCalendarManager.h; sourceTree = "<group>"; };
+		37D95A651D8268DB00CD819C /* CDCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCalendarManager.m; sourceTree = "<group>"; };
+		37D95A6A1D8268DB00CD819C /* CDMonthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMonthModel.h; sourceTree = "<group>"; };
+		37D95A6B1D8268DB00CD819C /* CDMonthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMonthModel.m; sourceTree = "<group>"; };
+		37D95A6D1D8268DB00CD819C /* CDDateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDateHelper.h; sourceTree = "<group>"; };
+		37D95A6E1D8268DB00CD819C /* CDDateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDDateHelper.m; sourceTree = "<group>"; };
+		37D95A701D8268DB00CD819C /* CDCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCalendarView.h; sourceTree = "<group>"; };
+		37D95A711D8268DB00CD819C /* CDCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCalendarView.m; sourceTree = "<group>"; };
+		37D95A731D8268DB00CD819C /* CDDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDayCell.h; sourceTree = "<group>"; };
+		37D95A741D8268DB00CD819C /* CDDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDDayCell.m; sourceTree = "<group>"; };
+		37D95A751D8268DB00CD819C /* CDMonthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMonthCell.h; sourceTree = "<group>"; };
+		37D95A761D8268DB00CD819C /* CDMonthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMonthCell.m; sourceTree = "<group>"; };
+		37D95A771D8268DB00CD819C /* CDWeekCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDWeekCell.h; sourceTree = "<group>"; };
+		37D95A781D8268DB00CD819C /* CDWeekCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDWeekCell.m; sourceTree = "<group>"; };
+		37D95A821D82694700CD819C /* CDBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseNavigationController.h; sourceTree = "<group>"; };
+		37D95A831D82694700CD819C /* CDBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseNavigationController.m; sourceTree = "<group>"; };
+		37D95A851D8271A800CD819C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		37D95A861D828DB400CD819C /* CDCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCalendarAppearance.h; sourceTree = "<group>"; };
+		37D95A871D828DB400CD819C /* CDCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCalendarAppearance.m; sourceTree = "<group>"; };
+		37D95A891D82937100CD819C /* CDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMainViewController.h; sourceTree = "<group>"; };
+		37D95A8A1D82937100CD819C /* CDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMainViewController.m; sourceTree = "<group>"; };
+		5CA8A0D33DCF7176783AD9CE /* libPods-CDCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		705C5EB50B2E6FE3F85C5627 /* Pods-CDCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDCalendar/Pods-CDCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		89B68C0E74F0415C264C55D5 /* Pods-CDCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDCalendar/Pods-CDCalendar.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37D95A451D82689100CD819C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CE48F9A1EE3FA2628CC96F /* libPods-CDCalendar.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37D95A3F1D82689100CD819C = {
+			isa = PBXGroup;
+			children = (
+				37D95A4A1D82689100CD819C /* CDCalendar */,
+				37D95A491D82689100CD819C /* Products */,
+				42B92466C642E14339DFA6F5 /* Pods */,
+				B80AB081B0E3AECE76943CC5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		37D95A491D82689100CD819C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A481D82689100CD819C /* CDCalendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37D95A4A1D82689100CD819C /* CDCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A891D82937100CD819C /* CDMainViewController.h */,
+				37D95A8A1D82937100CD819C /* CDMainViewController.m */,
+				37D95A621D8268DB00CD819C /* Class */,
+				37D95A811D82694700CD819C /* Libs */,
+				37D95A4E1D82689100CD819C /* AppDelegate.h */,
+				37D95A4F1D82689100CD819C /* AppDelegate.m */,
+				37D95A571D82689100CD819C /* Assets.xcassets */,
+				37D95A591D82689100CD819C /* LaunchScreen.storyboard */,
+				37D95A5C1D82689100CD819C /* Info.plist */,
+				37D95A4B1D82689100CD819C /* Supporting Files */,
+			);
+			path = CDCalendar;
+			sourceTree = "<group>";
+		};
+		37D95A4B1D82689100CD819C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A4C1D82689100CD819C /* main.m */,
+				37D95A851D8271A800CD819C /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37D95A621D8268DB00CD819C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A641D8268DB00CD819C /* CDCalendarManager.h */,
+				37D95A651D8268DB00CD819C /* CDCalendarManager.m */,
+				37D95A661D8268DB00CD819C /* Controllers */,
+				37D95A691D8268DB00CD819C /* Models */,
+				37D95A6C1D8268DB00CD819C /* Tools */,
+				37D95A6F1D8268DB00CD819C /* Views */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		37D95A661D8268DB00CD819C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		37D95A691D8268DB00CD819C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A6A1D8268DB00CD819C /* CDMonthModel.h */,
+				37D95A6B1D8268DB00CD819C /* CDMonthModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		37D95A6C1D8268DB00CD819C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A6D1D8268DB00CD819C /* CDDateHelper.h */,
+				37D95A6E1D8268DB00CD819C /* CDDateHelper.m */,
+				37D95A861D828DB400CD819C /* CDCalendarAppearance.h */,
+				37D95A871D828DB400CD819C /* CDCalendarAppearance.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		37D95A6F1D8268DB00CD819C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A701D8268DB00CD819C /* CDCalendarView.h */,
+				37D95A711D8268DB00CD819C /* CDCalendarView.m */,
+				37D95A721D8268DB00CD819C /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37D95A721D8268DB00CD819C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A731D8268DB00CD819C /* CDDayCell.h */,
+				37D95A741D8268DB00CD819C /* CDDayCell.m */,
+				37D95A751D8268DB00CD819C /* CDMonthCell.h */,
+				37D95A761D8268DB00CD819C /* CDMonthCell.m */,
+				37D95A771D8268DB00CD819C /* CDWeekCell.h */,
+				37D95A781D8268DB00CD819C /* CDWeekCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		37D95A811D82694700CD819C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				37D95A821D82694700CD819C /* CDBaseNavigationController.h */,
+				37D95A831D82694700CD819C /* CDBaseNavigationController.m */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		42B92466C642E14339DFA6F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				705C5EB50B2E6FE3F85C5627 /* Pods-CDCalendar.debug.xcconfig */,
+				89B68C0E74F0415C264C55D5 /* Pods-CDCalendar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B80AB081B0E3AECE76943CC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CA8A0D33DCF7176783AD9CE /* libPods-CDCalendar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37D95A471D82689100CD819C /* CDCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37D95A5F1D82689100CD819C /* Build configuration list for PBXNativeTarget "CDCalendar" */;
+			buildPhases = (
+				C3F51436CDC202AB68D04F6C /* [CP] Check Pods Manifest.lock */,
+				37D95A441D82689100CD819C /* Sources */,
+				37D95A451D82689100CD819C /* Frameworks */,
+				37D95A461D82689100CD819C /* Resources */,
+				2E458C0E7FB4C7B69CC2BA57 /* [CP] Embed Pods Frameworks */,
+				91CA7BA84801E2E1187CC53A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CDCalendar;
+			productName = CDCalendar;
+			productReference = 37D95A481D82689100CD819C /* CDCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37D95A401D82689100CD819C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Mangocity;
+				TargetAttributes = {
+					37D95A471D82689100CD819C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 37D95A431D82689100CD819C /* Build configuration list for PBXProject "CDCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37D95A3F1D82689100CD819C;
+			productRefGroup = 37D95A491D82689100CD819C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37D95A471D82689100CD819C /* CDCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37D95A461D82689100CD819C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D95A5B1D82689100CD819C /* LaunchScreen.storyboard in Resources */,
+				37D95A581D82689100CD819C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E458C0E7FB4C7B69CC2BA57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDCalendar/Pods-CDCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91CA7BA84801E2E1187CC53A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDCalendar/Pods-CDCalendar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3F51436CDC202AB68D04F6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37D95A441D82689100CD819C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D95A791D8268DB00CD819C /* CDCalendarManager.m in Sources */,
+				37D95A841D82694700CD819C /* CDBaseNavigationController.m in Sources */,
+				37D95A801D8268DB00CD819C /* CDWeekCell.m in Sources */,
+				37D95A7C1D8268DB00CD819C /* CDDateHelper.m in Sources */,
+				37D95A7F1D8268DB00CD819C /* CDMonthCell.m in Sources */,
+				37D95A8B1D82937100CD819C /* CDMainViewController.m in Sources */,
+				37D95A7E1D8268DB00CD819C /* CDDayCell.m in Sources */,
+				37D95A501D82689100CD819C /* AppDelegate.m in Sources */,
+				37D95A4D1D82689100CD819C /* main.m in Sources */,
+				37D95A7D1D8268DB00CD819C /* CDCalendarView.m in Sources */,
+				37D95A881D828DB400CD819C /* CDCalendarAppearance.m in Sources */,
+				37D95A7B1D8268DB00CD819C /* CDMonthModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		37D95A591D82689100CD819C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37D95A5A1D82689100CD819C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37D95A5D1D82689100CD819C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37D95A5E1D82689100CD819C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37D95A601D82689100CD819C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705C5EB50B2E6FE3F85C5627 /* Pods-CDCalendar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = CDCalendar/PrefixHeader.pch;
+				INFOPLIST_FILE = CDCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangocity.source.CDCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37D95A611D82689100CD819C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89B68C0E74F0415C264C55D5 /* Pods-CDCalendar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = CDCalendar/PrefixHeader.pch;
+				INFOPLIST_FILE = CDCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangocity.source.CDCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37D95A431D82689100CD819C /* Build configuration list for PBXProject "CDCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37D95A5D1D82689100CD819C /* Debug */,
+				37D95A5E1D82689100CD819C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37D95A5F1D82689100CD819C /* Build configuration list for PBXNativeTarget "CDCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37D95A601D82689100CD819C /* Debug */,
+				37D95A611D82689100CD819C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37D95A401D82689100CD819C /* Project object */;
+}
