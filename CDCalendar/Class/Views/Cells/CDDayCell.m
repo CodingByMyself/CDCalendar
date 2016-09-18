@@ -30,7 +30,6 @@
     
 }
 
-#pragma mark - Public Method
 - (void)adjustTitlePostion
 {
     if (self.labelSubtitle.text.length > 0) {
@@ -46,10 +45,53 @@
 }
 
 #pragma mark - Public Method
-- (void)setTitle:(NSString *)title andSubtitle:(NSString *)subtitle
+- (void)displayColorWithDate:(NSDate *)date
 {
+    NSLog(@"displayColorWithDate : %@",date);
+    
+    
+}
+
+- (void)setContentAtDate:(NSDate *)date andSelectedStatus:(BOOL)isSelected
+{
+    NSString *title = @"";
+    NSString *subtitle = @"";
+    if (date) {
+        self.labelDay.hidden = NO;
+        //  询问代理是否定义了 title 的内容
+        if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:titleForDate:)]) {
+            title = [[[CDCalendarManager sharedManager] delegate] calendarView:[[CDCalendarManager sharedManager] calendarView] titleForDate:date];
+        } else {
+            title = [CDDateHelper date:date toStringByFormat:@"dd"];
+        }
+        //  询问代理是否定义了 subtitle 的内容
+        if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:subtitleForDate:)]) {
+            subtitle = [[[CDCalendarManager sharedManager] delegate] calendarView:[[CDCalendarManager sharedManager] calendarView] subtitleForDate:date];
+        }
+    } else {
+        self.labelDay.hidden = YES;
+    }
+    
+    // 设置内容
     self.labelDay.text = title;
     self.labelSubtitle.text = subtitle;
+    
+    NSLog(@"date = %@",date);
+    //  区间限制和属性设置
+    if (date == nil) {
+        [self setSeletedCell:NO animation:NO]; //  设置选中状态
+        return;
+    } else if ([CDDateHelper date:date isEqualOrAfter:[[CDCalendarManager sharedManager] minDate] andEqualOrBefore:[[CDCalendarManager sharedManager] maxDate]]) {
+        [self setSeletedCell:isSelected animation:NO]; //  设置选中状态
+        self.tag = 0;
+    } else {
+        [self setSeletedCell:NO animation:NO]; //  设置选中状态
+        self.labelDay.textColor = CDDeselectDayColor;
+        self.labelSubtitle.text = @"";
+        self.tag = 100;
+    }
+    
+    // 调整位置
     [self adjustTitlePostion];
 }
 
@@ -102,6 +144,7 @@
             self.labelDay.font = [UIFont fontWithName:@"HelveticaNeue" size:[[[CDCalendarManager sharedManager] calendarAppearance] dayTitleFontSize]];
             self.labelSubtitle.textColor = [[[CDCalendarManager sharedManager] calendarAppearance] daySubtitleColor];
         }
+
     }
     
 }

@@ -15,6 +15,8 @@
 @property (nonatomic,readonly) UILabel *labelSubtitle;
 @property (nonatomic,readonly) UIView *viewBg;
 
-- (void)setTitle:(NSString *)title andSubtitle:(NSString *)subtitle;
+
+- (void)setContentAtDate:(NSDate *)date andSelectedStatus:(BOOL)isSelected;
 - (void)setSeletedCell:(BOOL)selected animation:(BOOL)animation;
+
 @end

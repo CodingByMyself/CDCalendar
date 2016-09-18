@@ -13,7 +13,7 @@
 @property (nonatomic,strong) NSArray *monthDatas;
 @property (nonatomic,readonly) NSMutableArray *selectedDates;
 
-- (void)reloadCalendarView;
+- (void)reloadView;
 - (void)selectDate:(NSDate *)date;
 - (void)deselectDate:(NSDate *)date;
 @end

@@ -39,7 +39,7 @@
 }
 
 #pragma mark - Public Method
-- (void)reloadCalendarView
+- (void)reloadView
 {
     [self.collectionViewCalendar reloadData];
 }
@@ -49,8 +49,10 @@
     if ([date isKindOfClass:[NSDate class]]) {
         if ([self isSelected:date] == NO) {
             [self.selectedDates addObject:date];
+            if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:didSelectDate:)]) {
+                [[[CDCalendarManager sharedManager] delegate] calendarView:self didSelectDate:date];
+            }
         }
-//        [self.collectionViewCalendar reloadData];
     }
 }
 
@@ -58,7 +60,9 @@
 {
     if ([date isKindOfClass:[NSDate class]]) {
         [self removeSelectedDate:date];
-//        [self.collectionViewCalendar reloadData];
+        if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:didDeselectDate:)]) {
+            [[[CDCalendarManager sharedManager] delegate] calendarView:self didDeselectDate:date];
+        }
     }
 }
 
@@ -73,34 +77,6 @@
     } else {
         return month.days[index];
     }
-}
-
-- (void)setDayCell:(CDDayCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSDate *day = [self getDayDateAtIndexPath:indexPath];
-    NSString *title = @"";
-    NSString *subtitle = @"";
-    if (day) {
-         cell.labelDay.hidden = NO;
-        //  询问代理是否定义了 title 的内容
-        if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:titleForDate:)]) {
-            title = [[[CDCalendarManager sharedManager] delegate] calendarView:self titleForDate:day];
-        } else {
-            title = [CDDateHelper date:day toStringByFormat:@"dd"];
-        }
-        //  询问代理是否定义了 subtitle 的内容
-        if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:subtitleForDate:)]) {
-            subtitle = [[[CDCalendarManager sharedManager] delegate] calendarView:self subtitleForDate:day];
-        }
-        
-    } else {
-        cell.labelDay.hidden = YES;
-    }
-    
-    // 设置内容
-    [cell setTitle:title andSubtitle:subtitle];
-    //  设置选中状态
-    [cell setSeletedCell:[self isSelected:day] animation:NO];
 }
 
 - (BOOL)isSelected:(NSDate *)date
@@ -132,7 +108,6 @@
         /*************  月份  ***************/
         [self.collectionViewCalendar registerClass:[CDMonthCell class] forCellWithReuseIdentifier:@"CDMonthCellID"];
         CDMonthCell * cell = (CDMonthCell *)[self.collectionViewCalendar dequeueReusableCellWithReuseIdentifier:@"CDMonthCellID" forIndexPath:indexPath];
-        cell.backgroundColor = [[[CDCalendarManager sharedManager] calendarAppearance] monthTitleBackgroundColor];
         
         CDMonthModel *month = [self.monthDatas objectAtIndex:indexPath.section];
         cell.labelMonth.text = [CDDateHelper date:month.days[0] toStringByFormat:[[[CDCalendarManager sharedManager] calendarAppearance] monthTitleFormatter]];
@@ -149,7 +124,8 @@
         /*************  日期  ***************/
         [self.collectionViewCalendar registerClass:[CDDayCell class] forCellWithReuseIdentifier:@"CDDayCellID"];
         CDDayCell * cell = (CDDayCell *)[self.collectionViewCalendar dequeueReusableCellWithReuseIdentifier:@"CDDayCellID" forIndexPath:indexPath];
-        [self setDayCell:cell atIndexPath:indexPath];
+        NSDate *day = [self getDayDateAtIndexPath:indexPath];
+        [cell setContentAtDate:day andSelectedStatus:[self isSelected:day]];
         return cell;
         
     }
@@ -159,18 +135,28 @@
 {
     NSLog(@"section = %zi , item = %zi   clicked !",[indexPath section],[indexPath row]);
     NSDate *date = [self getDayDateAtIndexPath:indexPath];
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    if ([cell isKindOfClass:[CDDayCell class]] && date) {
-        CDDayCell *dayCell = (CDDayCell *)cell;
-        [dayCell setSeletedCell:(![self isSelected:date]) animation:YES];
-        if ([self isSelected:date]) {
-            [self deselectDate:date];
-        } else {
-            [self selectDate:date];
-        }
-        
-    }
     
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    if (cell.tag == 0 && [cell isKindOfClass:[CDDayCell class]] && date) {
+        
+        if (([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:shouldSelectDate:)] == NO) || [[[CDCalendarManager sharedManager] delegate] calendarView:self shouldSelectDate:date]) {
+            CDDayCell *dayCell = (CDDayCell *)cell;
+            
+            BOOL  isSelected = [self isSelected:date];
+            if (isSelected) {
+                if ([[[CDCalendarManager sharedManager] delegate] respondsToSelector:@selector(calendarView:shouldDeselectDate:)]) {
+                    if ([[[CDCalendarManager sharedManager] delegate] calendarView:self shouldDeselectDate:date] == NO) {
+                        return;  //  直接结束
+                    }
+                }
+                [self deselectDate:date];
+            } else {
+                [self selectDate:date];
+            }
+            [dayCell setSeletedCell:(!isSelected) animation:YES];
+            
+        }
+    }
 }
 
 #pragma mark  Item Size
@@ -211,6 +197,13 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
     return 0.8;
+}
+
+#pragma mark - Setter Method
+- (void)setMonthDatas:(NSArray *)monthDatas
+{
+    _monthDatas = monthDatas;
+    [self.collectionViewCalendar reloadData];
 }
 
 #pragma mark - Getter Method

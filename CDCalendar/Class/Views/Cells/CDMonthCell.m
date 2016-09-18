@@ -21,8 +21,9 @@
 {
     if (_labelMonth == nil) {
         
-        self.layer.borderColor = [UIColor colorWithRed:220.0/256.0 green:220.0/256.0 blue:220.0/256.0 alpha:1.0].CGColor;
-        self.layer.borderWidth = 0.6;
+        self.backgroundColor = [[[CDCalendarManager sharedManager] calendarAppearance] monthTitleBackgroundColor];
+        self.layer.borderColor = [UIColor colorWithRed:230.0/256.0 green:230.0/256.0 blue:230.0/256.0 alpha:1.0].CGColor;
+        self.layer.borderWidth = 0.3;
         
         _labelMonth = [[UILabel alloc] init];
         _labelMonth.textColor = [[[CDCalendarManager sharedManager] calendarAppearance] monthTitleColor];

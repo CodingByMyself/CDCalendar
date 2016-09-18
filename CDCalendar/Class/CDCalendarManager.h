@@ -12,6 +12,19 @@
 
 
 @protocol CDCalendarManagerDelegate <NSObject>
+
+
+/**
+ * Asks the dataSource the minimum date to display.
+ */
+- (NSDate *)minimumDateForCalendarView:(CDCalendarView *)calendar;
+
+/**
+ * Asks the dataSource the maximum date to display.
+ */
+- (NSDate *)maximumDateForCalendarView:(CDCalendarView *)calendar;
+
+@optional
 /**
  * Asks the dataSource for a title for the specific date as a replacement of the day text
  */
@@ -22,20 +35,36 @@
  */
 - (NSString *)calendarView:(CDCalendarView *)calendar subtitleForDate:(NSDate *)date;
 
+#pragma mark
 /**
- * Asks the dataSource the minimum date to display.
+ * Asks the delegate whether the specific date is allowed to be selected by tapping.
  */
-- (NSDate *)minimumDateForCalendar:(CDCalendarView *)calendar;
+- (BOOL)calendarView:(CDCalendarView *)calendar shouldSelectDate:(NSDate *)date;
 
 /**
- * Asks the dataSource the maximum date to display.
+ * Tells the delegate a date in the calendar is selected by tapping.
  */
-- (NSDate *)maximumDateForCalendar:(CDCalendarView *)calendar;
+- (void)calendarView:(CDCalendarView *)calendar didSelectDate:(NSDate *)date;
+
+/**
+ * Asks the delegate whether the specific date is allowed to be deselected by tapping.
+ */
+- (BOOL)calendarView:(CDCalendarView *)calendar shouldDeselectDate:(NSDate *)date;
+
+/**
+ * Tells the delegate a date in the calendar is deselected by tapping.
+ */
+- (void)calendarView:(CDCalendarView *)calendar didDeselectDate:(NSDate *)date;
+
+
+// 视图代理方法
+//- (void)calendarView:(CDCalendarView *)calendar loadedTitleLabel:(UILabel *)labelTitle subtitleLabel:(UILabel *)labelSubtitle OnTheDay:(NSDate *)date;
 
 @end
 
 
-
+#pragma mark 
+#define CDDeselectDayColor   DefineColorRGB(200.0, 200.0, 200.0, 1.0)
 
 @interface CDCalendarManager : NSObject
 
@@ -59,8 +88,8 @@
  */
 + (instancetype)sharedManager;
 
-- (void)setMinDate:(NSDate *)minDate andMaxDate:(NSDate *)maxDate;
-
+//- (void)setMinDate:(NSDate *)minDate andMaxDate:(NSDate *)maxDate;
+- (void)reloadCalendarView;
 
 
 

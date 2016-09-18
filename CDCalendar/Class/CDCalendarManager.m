@@ -44,11 +44,27 @@ static CDCalendarManager *_sharedSDK;
 
 
 #pragma mark - Public Method
-- (void)setMinDate:(NSDate *)minDate andMaxDate:(NSDate *)maxDate
+- (void)reloadCalendarView
 {
-    _minDate = minDate;
-    _maxDate = maxDate;
+    // 能显示的最小时间
+    if ([self.delegate respondsToSelector:@selector(minimumDateForCalendarView:)]) {
+        _minDate = [self.delegate minimumDateForCalendarView:self.calendarView];
+    } else {
+        _minDate = [NSDate date];
+    }
+     // 能显示的最大时间
+    if ([self.delegate respondsToSelector:@selector(maximumDateForCalendarView:)]) {
+        _maxDate = [self.delegate maximumDateForCalendarView:self.calendarView];
+    } else {
+        _maxDate = _minDate;
+    }
     
+    [self dataReload];
+}
+
+#pragma mark - Private Method
+- (void)dataReload
+{
     NSDate *startDay = [CDDateHelper firstDayOfMonth:_minDate];
     NSDate *endDay = [CDDateHelper lastDayOfMonth:_maxDate];
     NSMutableArray *tempData = [[NSMutableArray alloc] init];
@@ -61,7 +77,8 @@ static CDCalendarManager *_sharedSDK;
         count++;
         NSDate *date = [CDDateHelper addToDate:startDay days:count];
         if ([CDDateHelper date:date isEqualOrAfter:startDay andEqualOrBefore:endDay]) {
-            if ([CDDateHelper date:date isTheSameMonthThan:lastDate] == NO) {
+            //  如果是一个新月份或者是区间值的最后一天，则需要创建一个月份的模型对象并添加
+            if ([CDDateHelper date:date isTheSameMonthThan:lastDate] == NO || [CDDateHelper date:date isTheSameDayThan:endDay]) {
                 CDMonthModel *monthModel = [[CDMonthModel alloc] init];
                 monthModel.days = [NSArray arrayWithArray:tempData];
                 monthModel.numberOfWeeks = [CDDateHelper numberOfWeeks:lastDate];

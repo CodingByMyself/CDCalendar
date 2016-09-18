@@ -23,16 +23,15 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    [[CDCalendarManager sharedManager] setMinDate:[NSDate date] andMaxDate:[CDDateHelper addToDate:[NSDate date] months:20]];
     [self.view addSubview:[[CDCalendarManager sharedManager] calendarView]];
     [[[CDCalendarManager sharedManager] calendarView] mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(120.0);
+        make.top.equalTo(self.view).offset(100.0);
         make.left.equalTo(self.view).offset(0);
         make.right.equalTo(self.view).offset(0);
-        make.bottom.equalTo(self.view).offset(-50.0);
+        make.bottom.equalTo(self.view).offset(0);
     }];
     [[CDCalendarManager sharedManager] setDelegate:self];
-    [[[CDCalendarManager sharedManager] calendarView] reloadCalendarView];
+    [[CDCalendarManager sharedManager] reloadCalendarView];
 }
 
 #pragma mark - Delegate Method
@@ -57,7 +56,7 @@
 /**
  * Asks the dataSource the minimum date to display.
  */
-- (NSDate *)minimumDateForCalendar:(CDCalendarView *)calendar
+- (NSDate *)minimumDateForCalendarView:(CDCalendarView *)calendar
 {
     return [NSDate date];
 }
@@ -65,9 +64,9 @@
 /**
  * Asks the dataSource the maximum date to display.
  */
-- (NSDate *)maximumDateForCalendar:(CDCalendarView *)calendar
+- (NSDate *)maximumDateForCalendarView:(CDCalendarView *)calendar
 {
-    return [CDDateHelper addToDate:[NSDate date] months:20];
+    return [CDDateHelper addToDate:[NSDate date] months:8];
 }
 
 @end

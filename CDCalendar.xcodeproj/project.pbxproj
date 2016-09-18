@@ -119,19 +119,11 @@
 			children = (
 				37D95A641D8268DB00CD819C /* CDCalendarManager.h */,
 				37D95A651D8268DB00CD819C /* CDCalendarManager.m */,
-				37D95A661D8268DB00CD819C /* Controllers */,
 				37D95A691D8268DB00CD819C /* Models */,
 				37D95A6C1D8268DB00CD819C /* Tools */,
 				37D95A6F1D8268DB00CD819C /* Views */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		37D95A661D8268DB00CD819C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		37D95A691D8268DB00CD819C /* Models */ = {

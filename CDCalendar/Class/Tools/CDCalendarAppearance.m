@@ -121,9 +121,9 @@
 {
     if (_radiusOfSelectedViewBgOffset == 0.0) {
         if (ScreenWidth > 320) {
-            _radiusOfSelectedViewBgOffset = 8.0;
+            _radiusOfSelectedViewBgOffset = 15.0;
         } else {
-            _radiusOfSelectedViewBgOffset = 5.0;
+            _radiusOfSelectedViewBgOffset = 8.0;
         }
         
     }
